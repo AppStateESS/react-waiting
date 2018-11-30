@@ -1,4 +1,4 @@
-/* global __dirname, module */
+/* global __dirname */
 const path = require('path')
 module.exports = {
   entry: './src/index.js',
@@ -7,10 +7,20 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2'
   },
-  externals: {'react': 'commonjs react'},
+  resolve: {
+    alias: {
+      'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+    }
+  },
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          'style-loader', 'css-loader',
+        ],
+      }, {
         test: /\.jsx?/,
         include: path.resolve(__dirname, 'src'),
         loader: 'babel-loader',
