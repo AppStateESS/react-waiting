@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Waiting = (props) => {
+const Waiting = props => {
   let message
   if (props.message.length === 0) {
     message = <span>Loading {props.label}...</span>
@@ -17,12 +17,12 @@ const Waiting = (props) => {
 
 Waiting.propTypes = {
   label: PropTypes.string,
-  message: PropTypes.string,
+  message: PropTypes.string
 }
 
 Waiting.defaultProps = {
   message: '',
-  label: '',
+  label: ''
 }
 
 export default Waiting
