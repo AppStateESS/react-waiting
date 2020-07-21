@@ -1,6 +1,6 @@
 {
   "name": "@essappstate/react-waiting",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Waiting/Loading Font Awesome rotating icon",
   "main": "build/index.js",
   "scripts": {
@@ -28,14 +28,14 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   }
 }
