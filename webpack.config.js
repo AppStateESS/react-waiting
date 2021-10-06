@@ -1,32 +1,33 @@
-/* global __dirname */
+/* global __dirname, module */
 const path = require('path')
+
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
   resolve: {
     alias: {
       react: path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
-    }
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+    },
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['css-loader']
+        use: {loader: 'css-loader'},
       },
       {
         test: /\.jsx?/,
         include: path.resolve(__dirname, 'src'),
         loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env', '@babel/preset-react']
-        }
-      }
-    ]
-  }
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
+      },
+    ],
+  },
 }
